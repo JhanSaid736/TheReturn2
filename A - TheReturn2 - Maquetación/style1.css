@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Noto+Sans+JP:wght@100&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+:root{
+    --clr: rgb(30, 30, 30);
+}
+
+body{
+    background-color: var(--clr);
+    margin: 80px auto;
+    width: 80%;
+}
+
+.Padre-Grid{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header header header"
+    "aside main main main"
+    "aside main main main"
+    "footer footer footer footer"
+    ;
+    column-gap: 20px;
+    row-gap: 20px;
+    display: grid;
+}
+
+.Hijo{
+    border-radius: 20px;
+}
+
+.Hijo h1,
+.Hijo h2{
+    margin: 40px auto;
+    width: 90%;
+}
+
+.Hijo p{
+    margin: 30px auto;
+    width: 90%;
+}
+
+header{
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 3%;
+    grid-area: header;
+}
+
+.menu{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    margin: auto;
+    height: 80px;
+    width: 90%;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu ul li{
+    position: relative;
+    list-style: none;
+    height: 80px;
+    width: 6em;
+    z-index: 1;
+}
+
+.menu ul li a{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+}
+
+.menu ul li a .icon{
+    justify-content: space-between;
+    transition: all .5s ease;
+    position: relative;
+    text-align: center;
+    line-height: 75px;
+    color: var(--clr);
+    font-size: 1.5em;
+    display: block;
+}
+
+.menu ul li.active a .icon{
+    transform: translateY(-35px);
+}
+
+.menu ul li a .texto{
+    transform: translateY(25px);
+    transition: all .5s ease;
+    letter-spacing: 0.05em;
+    position: absolute;
+    font-size: 0.95em;
+    color: var(--clr);
+}
+
+.menu ul li.active a .texto{
+    transform: translateY(10px);
+    opacity: 1;
+}
+
+.indicador{
+    background-color:  rgb(79, 194, 214);
+    border: 5px solid var(--clr);
+    transition: all .5s ease;
+    border-radius: 50%;
+    position: absolute;
+    height: 80px;
+    width: 6em;
+    top: -50%;
+}
+
+.indicador::before{
+    box-shadow: 0px -10px 0 0 var(--clr);
+    border-top-right-radius: 20px;
+    position: absolute;
+    height: 20px;
+    content: '';
+    width: 20px;
+    left: -20px;
+    top: 50%;
+}
+
+.indicador::after{
+    box-shadow: 0px -10px 0 0 var(--clr);
+    border-top-left-radius: 20px;
+    position: absolute;
+    height: 20px;
+    right: -20px;
+    content: '';
+    width: 20px;
+    top: 50%;
+}
+
+.menu ul li:nth-child(1).active ~.indicador{
+    transform: translateX(calc(6em * 0));
+}
+.menu ul li:nth-child(2).active ~.indicador{
+    transform: translateX(calc(6em * 1));
+}
+.menu ul li:nth-child(3).active ~.indicador{
+    transform: translateX(calc(6em * 2));
+}
+.menu ul li:nth-child(4).active ~.indicador{
+    transform: translateX(calc(6em * 3));
+}
+
+main{
+    background-color: rgb(255, 255, 255);
+    grid-area: main;
+}
+
+aside{
+    background-color: rgb(129, 129, 129);
+    grid-area: aside;
+}
+
+aside img{
+    transition: all .3s ease;
+    filter: brightness(0.8);
+    border-radius: 20px;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    width: 90%;
+}
+
+aside img:hover{
+    filter: brightness(1);
+    cursor: pointer;
+}
+
+footer{
+    background-color:  rgb(79, 194, 214);
+    justify-content: center;
+    text-align: center;
+    grid-area: footer;
+    color: white;
+    display: flex;
+}
+
+@media(max-width: 950px){
+    .Padre-Grid{
+        grid-template-areas:
+        "header header header header"
+        "main main main main"
+        "aside aside aside aside"
+        "footer footer footer footer";
+    }
+    aside img{
+        margin-left: 15%;
+        margin-top: -2%;
+        width: 70%;
+    }
+}
+@media(max-width: 556px){
+    .menu{
+        flex-direction: column;
+        align-items: initial;
+        position: initial;
+    }
+    .menu-icon{
+        font-size: 2.50em;
+        cursor: pointer;
+        display: flex;
+    }
+    .menu ul{
+        display: none;
+        margin: auto;
+    }
+    .menu ul.show{
+        display: block;
+    }
+    .menu ul li.active a .icon{
+        transform: translateY(0.0);
+        transform: scale(1.4, 1.4);
+    }
+    .menu ul li.active a .texto{
+        transform: translateY(25px);
+    }
+    .indicador{
+        display: none;
+    }
+}

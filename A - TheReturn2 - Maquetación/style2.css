@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Noto+Sans+JP:wght@100&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+:root{
+    --clr: rgb(43, 43, 43);
+}
+
+body{
+    
+    background-image: url(img/Speedline-16.7s-1937px.svg);
+    margin: 50px auto;
+    width: 90%;
+}
+
+.Padre-Grid{
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header header header header"
+    "main main main aside aside"
+    "main main main aside aside"
+    "footer footer footer footer footer"
+    ;
+    column-gap: 20px;
+    row-gap: 20px;
+    display: grid;
+}
+
+.Padre-Grid > .Hijo{
+    border-radius: 20px;
+    color: white;
+}
+
+.Hijo h1, h2{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Caveat', cursive;
+    margin: 20px auto;
+    color: black;
+    width: 90%;
+}
+
+.Hijo .margen{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Caveat', cursive;
+    margin-bottom: 2em;
+    margin-left: 5%;
+    color: black;
+    width: 90%;
+}
+
+header{
+    grid-area: header;
+    margin-bottom: 3%;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu{
+    background-color: rgb(69, 138, 120);
+    border-radius: 20px;
+}
+
+.menu ul{
+    justify-content: space-around;
+    display: flex;
+}
+
+.menu ul li{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Caveat', cursive;
+    transition: all .3s ease;
+    font-size: 1.30em;
+    line-height: 3em;
+    list-style: none;
+}
+
+.menu ul li:hover{
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+main{
+    background-color: rgb(240, 240, 240);
+    min-height: 60vh;
+    grid-area: main;
+}
+
+aside{
+    background-color: rgb(183, 183, 183);
+    grid-area: aside;
+}
+
+aside img{
+    transition: all .5s ease;
+    filter: brightness(0.8);
+    border-radius: 20px;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+aside img:hover{
+    filter: brightness(1);
+}
+
+footer{
+    background-color: rgb(40, 40, 40);
+    grid-area: footer;
+}
+
+footer p{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'caveat', cursive;
+    line-height: 1.90em;
+    text-align: center;
+    font-size: 1.30em;
+    color: white;
+}
+
+@media (max-width: 900px){
+    .Padre-Grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "header header header header"
+        "main main main main"
+        "aside aside aside aside"
+        "footer footer footer footer"
+        ;
+        display: grid;
+    }
+    main{
+        min-height: auto;
+    }
+}
+
+@media (max-width: 500px){
+    .menu-icon{
+        font-size: 2.40em;
+        cursor: pointer;
+        padding: 20px;
+        display: flex;
+    }
+    .menu ul{
+        display: none;
+    }
+    .menu ul.show{
+        display: block;
+    }
+    .menu ul li{
+        justify-content: space-around;
+        line-height: 3em;
+        display: flex;
+    }
+}

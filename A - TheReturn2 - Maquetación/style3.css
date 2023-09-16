@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Noto+Sans+JP:wght@100&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: rgb(228, 228, 228);
+    margin: 50px auto;
+    width: 90%;
+}
+
+.Padre-Grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 20px;
+    row-gap: 20px;
+    display: grid;
+}
+
+.Padre-Grid > .Hijo{
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.Hijo h1, h2, .Just{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Caveat', cursive;
+    margin: 20px auto;
+    width: 90%;
+}
+
+header{
+    background: rgb(41, 41, 131);
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-bottom: 3%;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu ul{
+    justify-content: space-around;
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Caveat', cursive;
+    transition: all .5s ease;
+    font-size: 1.30em;
+}
+
+.menu ul li:hover{
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+main{
+    background-color: rgb(246, 246, 246);
+    grid-column: span 2;
+}
+
+aside{
+    background-color: rgb(205, 205, 205);
+    grid-column: 3 / 4;
+    grid-row: span 2;
+}
+
+.Widget{
+    background-color: rgba(110, 204, 255, 0.9);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Caveat', cursive;
+}
+
+.Widget h3{
+    justify-content: center;
+    margin: 20px auto;
+    display: flex;
+}
+
+.Widget img{
+    box-shadow: 0 2px 5px black;
+    border-radius: 20px;
+    margin-left: 5%;
+    width: 90%;
+}
+
+.Widget img.XD{
+    display: none;
+}
+
+footer{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Caveat', cursive;
+    background-color: black;
+    justify-content: center;
+    grid-column: span 3;
+    text-align: center;
+    color: white;
+    display: flex;
+}
+
+@media(max-width:800px) {
+    main{
+        grid-column: span 3;
+    }
+    aside{
+        grid-column: span 3;
+    }
+    .Widget.Num1{
+        grid-column: span 2;
+    }
+    .Widget img.XD{
+        display: flex;
+    }
+}
+
+@media (max-width:584px){
+    .Widget.Num1,
+    .Widget.Num2{
+        grid-column: span 3;
+    }
+    .Widget img.XD{
+        display: none;
+    }
+}
+
+@media (max-width:500px) {
+    .menu-icon{
+        font-size: 2.40em;
+        cursor: pointer;
+        display: flex;
+    }
+    .menu ul{
+        display: none;
+    }
+    .menu ul.show{
+        justify-content: center;
+        display: block;
+    }
+    .menu ul li{
+        justify-content: space-around;
+        line-height: 3em;
+        display: flex;
+    }
+}

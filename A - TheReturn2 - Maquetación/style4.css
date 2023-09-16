@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Noto+Sans+JP:wght@100&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: rgb(41, 41, 41);
+    border-radius: 20px;
+    margin: 50px auto;
+    width: 90%;
+}
+
+.padre_grid{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header header"
+    "aside main main main"
+    "aside main main main"
+    "footer footer footer footer"
+    ;
+    display: grid;
+}
+
+header{
+    background-color: rgb(61, 187, 209);
+    border-radius: 20px 20px 0 0;
+    grid-area: header;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu ul{
+    justify-content: space-evenly;
+    list-style: none;
+    display: flex;
+}
+
+.menu li a{
+    text-decoration: none;
+    padding: 20px 20px;
+    display: block;
+    color: black;
+}
+
+nav a{
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+a:hover{
+    transform: scale(1.2,1.2);
+    cursor: pointer;
+}
+
+h1, h2, p{
+    margin: 20px auto;
+    width: 80%;
+}
+
+main{
+    background: white;
+    min-height: 75vh;
+    grid-area: main;
+}
+
+main img{
+    box-shadow: 0 5px 10px black;
+    border-radius: 20px;
+    margin-bottom: 2em;
+    margin-left: 30%;
+    margin-top: 2em;
+    width: 40%;
+}
+
+aside{
+    background-color: rgb(205, 205, 205);
+    grid-area: aside;
+}
+
+aside img{
+    box-shadow: 0 5px 10px black;
+    border-radius: 20px;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+footer{
+    background-color: rgb(71, 199, 221);
+    border-radius: 0 0 20px 20px;
+    grid-area: footer;
+}
+
+footer p{
+    text-align: center;
+    color: black;
+}
+
+@media(max-width: 1010px){
+    .padre_grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        "header header header header"
+        "main main main main"
+        "aside aside aside aside"
+        "footer footer footer footer"
+        ;
+        display: grid;
+    }
+    main{
+        min-height: min-content;
+    }
+    main img{
+        margin: 0 15% 5.0%;
+        width: 70%;
+    }
+    aside img{
+        margin: 0 15% 5.0%;
+        width: 70%;
+    }
+    aside img.XD{
+        display: none;
+    }
+}
+
+@media(max-width: 500px){
+    .menu-icon{
+        font-size: 2.20em;
+        margin-left: 3%;
+        cursor: pointer;
+        display: flex;
+    }
+    .menu ul{
+        display: none;
+    }
+    .menu ul.show{
+        justify-content: center;
+        display: block;
+    }
+    .menu ul li{
+        justify-content: center;
+        display: flex;
+    }
+}

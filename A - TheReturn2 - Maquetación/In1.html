@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style1.css">
+    <title>Maquetación</title>
+</head>
+<body>
+    <div class="Padre-Grid">
+        <header class="Hijo">
+            <nav id="caja" class="menu">
+                <span class="menu-icon">
+                    <ion-icon id="icono" name="menu-outline"></ion-icon>
+                </span>
+                <ul>
+                    <li class="lista active">
+                        <a href="In1.html">
+                            <span class="icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </span>
+                            <span class="texto">Elemento1</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="In2.html">
+                            <span class="icon">
+                                <ion-icon name="logo-html5"></ion-icon>
+                            </span>
+                            <span class="texto">Elemento2</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="In3.html">
+                            <span class="icon">
+                                <ion-icon name="logo-css3"></ion-icon>
+                            </span>
+                            <span class="texto">Elemento3</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="In4.html">
+                            <span class="icon">
+                                <ion-icon name="apps-outline"></ion-icon>
+                            </span>
+                            <span class="texto">Elemento4</span>
+                        </a>
+                    </li>
+                    <div class="indicador"></div>
+                </ul>
+            </nav>
+        </header>
+        <main class="Hijo">
+            <h1>¡Lorem Ipsum!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime qui mollitia natus. Tempore iure architecto ipsam consectetur, ducimus soluta esse quasi ratione! Perspiciatis, voluptas reprehenderit totam sunt optio dolorem vero! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ipsam natus ducimus et quaerat est? Animi incidunt quasi, ipsam quibusdam saepe repellat odit, deleniti eaque eum non possimus numquam delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit et qui delectus, velit veniam odit ullam numquam sed voluptate quos magnam minima provident. Ut exercitationem quasi aliquid? Exercitationem, sed est?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus labore molestiae exercitationem, optio dignissimos cumque suscipit at sit. Facilis laborum aliquam cupiditate esse minima culpa amet ipsum commodi incidunt quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur corporis iure earum beatae laudantium doloremque accusamus, fuga eaque reiciendis temporibus in aliquam culpa praesentium ipsa ducimus illum inventore at.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis earum explicabo necessitatibus commodi, nulla eaque enim iste distinctio, rem facere officiis est accusamus pariatur nobis perferendis dolor doloremque hic voluptatem!</p>
+        </main>
+        <aside class="Hijo">
+            <h2>¡Lorem Ipsum!</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet mollitia nisi laboriosam aut beatae commodi eligendi totam quis repellat explicabo earum sunt dolorum, soluta omnis, odio doloremque ipsam aperiam neque.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quae quia et alias! Necessitatibus eligendi perferendis, voluptas a voluptate harum. Aperiam explicabo sequi corporis ut doloremque non perferendis earum! Est.</p>
+            <img src="img/maquetación.png" alt="">
+        </aside>
+        <footer class="Hijo">
+            <p>Derechos reservados a @Eden'sCer032</p>
+        </footer>
+    </div>
+    <script>
+        const lista = document.querySelectorAll('.lista')
+        function activelink() {
+            lista.forEach((item) => 
+            item.classList.remove('active'))
+            this.classList.add('active')
+        }
+        lista.forEach((item) => 
+        item.addEventListener('click',activelink))
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="ZSscript1.js"></script>
+    <script src="ZSscript2.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
